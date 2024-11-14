@@ -25,7 +25,7 @@ steps:
     sscCiToken: '$(ScanCentral.SscCiToken)'
     buildTool: 'mvn'
     downloadDebugLogs: true
-    buildFile: './first-service/pom.xml'
+    buildFile: './second-service/pom.xml'
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
