@@ -13,6 +13,15 @@ pool:
   - Agent.Version -equals 3.245.0
 
 steps:
+- task: FortifyScanCentralSAST@10
+  inputs:
+    scanCentralCtrlUrl: 'https://sc-r9-ctrl1.fortifylab.net:8443/scancentral-ctrl'
+    scanCentralClientToken: '$(ScanCentral.ClientToken)'
+    sscUrl: 'https://eg1-r8-mysql.fortifylab.net:8443/ssc'
+    sscCiToken: '$(ScanCentral.SscCiToken)'
+    buildTool: 'mvn'
+    downloadDebugLogs: true
+    buildFile: './first-service/pom.xml'
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
