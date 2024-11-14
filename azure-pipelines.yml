@@ -5,7 +5,11 @@
 
 trigger:
 - master
-
+variables:
+  system.debug: true
+  Agent.Diagnostic: true
+  maven: C:\Users\arathod3\Downloads\apache-maven-3.9.6-bin\apache-maven-3.9.6
+  NODE_TLS_REJECT_UNAUTHORIZED: 0
 pool:
   name: Default
   demands: 
